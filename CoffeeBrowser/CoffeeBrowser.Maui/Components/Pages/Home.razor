@@ -1,5 +1,24 @@
 ﻿@page "/"
 
+@* @using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+Whole Page Auth
+*@
+
 <h1>Coffee Browser</h1>
 
-Welcome to the coffee browser app.
+@* Specific components on page auth*@
+<AuthorizeView>
+    <Authorized>
+    Welcome to the coffee browser app.
+    </Authorized>
+    <NotAuthorized>
+        Please log in.
+    </NotAuthorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="Admin">
+    <div style="background-color:#444;color:white;padding:10px">  
+        This is only visable for admins
+    </div>
+</AuthorizeView>
