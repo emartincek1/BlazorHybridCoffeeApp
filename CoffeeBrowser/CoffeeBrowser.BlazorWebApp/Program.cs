@@ -1,10 +1,15 @@
 using CoffeeBrowser.BlazorWebApp.Components;
+using CoffeeBrowser.Library.Data;
+using CoffeeBrowser.BlazorWebApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddHttpClient();
+builder.Services.AddTransient<ICoffeeService, CoffeeService>();
 
 var app = builder.Build();
 
