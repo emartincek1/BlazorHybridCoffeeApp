@@ -1,4 +1,4 @@
-﻿namespace CoffeeBrowser.Maui.Data;
+﻿namespace CoffeeBrowser.Library.Data;
 
 public interface ICoffeeService
 {
